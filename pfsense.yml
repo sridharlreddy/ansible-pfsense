@@ -2,6 +2,7 @@
   vars:
     fw_op: present
   tasks:
+  - debug: msg="{{ vars }}"
   - name: "Allow TCP on 80"
     pfsense_rule:
       name: 'Allow Internal DNS traffic out'
