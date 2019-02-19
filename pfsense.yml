@@ -5,7 +5,7 @@
   - debug: msg="{{ vars }}"
   - name: "Allow TCP on 80"
     pfsense_rule:
-      name: 'Allow Internal DNS traffic out'
+      name: 'Allow 80'
       action: pass
       interface: lan
       ipprotocol: inet
@@ -16,7 +16,7 @@
 
   - name: "Allow TCP on 443"
     pfsense_rule:
-      name: 'Allow Internal DNS traffic out'
+      name: 'Allow 443'
       action: pass
       interface: lan
       ipprotocol: inet
