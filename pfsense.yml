@@ -2,6 +2,7 @@
   tasks:
   - name: "Add Internal DNS out rule"
     pfsense_rule:
+      name: 'Allow Internal DNS traffic out'
       action: pass
       interface: lan
       ipprotocol: inet
@@ -9,3 +10,4 @@
       source: "{{ vm_ip_address }}"
       destination: any:53
       state: present
+      
