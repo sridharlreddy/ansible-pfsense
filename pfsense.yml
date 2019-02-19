@@ -10,7 +10,7 @@
       interface: lan
       ipprotocol: inet
       protocol: tcp
-      source: "{{ ip_address }}"
+      source: "{{ vm_ip_address }}"
       destination: any:80
       state: "{{ fw_op }}"
 
@@ -21,7 +21,7 @@
       interface: lan
       ipprotocol: inet
       protocol: tcp
-      source: "{{ ip_address }}"
+      source: "{{ vm_ip_address }}"
       destination: any:443
       state: "{{ fw_op }}"
 
