@@ -1,13 +1,26 @@
 - hosts: pfsense
+  vars:
+    fw_op: present
   tasks:
-  - name: "Add Internal DNS out rule"
+  - name: "Allow TCP on 80"
     pfsense_rule:
       name: 'Allow Internal DNS traffic out'
       action: pass
       interface: lan
       ipprotocol: inet
       protocol: tcp
-      source: "{{ vm_ip_address }}"
+      source: "{{ ip_address }}"
       destination: any:80
-      state: present
-      
+      state: "{{ fw_op }}"
+
+  - name: "Allow TCP on 443"
+    pfsense_rule:
+      name: 'Allow Internal DNS traffic out'
+      action: pass
+      interface: lan
+      ipprotocol: inet
+      protocol: tcp
+      source: "{{ ip_address }}"
+      destination: any:443
+      state: "{{ fw_op }}"
+
