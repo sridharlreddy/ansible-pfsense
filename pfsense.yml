@@ -1,4 +1,11 @@
----
 - hosts: pfsense
-  roles:
-  - pfsense
+  tasks:
+  - name: "Add Internal DNS out rule"
+    pfsense_rule:
+      action: pass
+      interface: lan
+      ipprotocol: inet
+      protocol: udp
+      source: "{{ vm_ip_address }}"
+      destination: any:53
+      state: present
