@@ -6,8 +6,8 @@
       action: pass
       interface: lan
       ipprotocol: inet
-      protocol: udp
+      protocol: tcp
       source: "{{ vm_ip_address }}"
-      destination: any:53
+      destination: any:80
       state: present
       
