@@ -1,4 +1,4 @@
-- hosts: pfsense
+- hosts: all
   vars:
     fw_op: present
   tasks:
